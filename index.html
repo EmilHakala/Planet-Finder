@@ -576,10 +576,16 @@
             if (isVisible) {
                 // Try to determine visibility status from altitude and time
                 const altitude = planet.altitude;
-                if (altitude > 45) {
-                    visibilityText = 'Most of the night';
+                if (altitude > 60) {
+                    visibilityText = 'Excellent visibility';
+                } else if (altitude > 45) {
+                    visibilityText = 'Great visibility';
+                } else if (altitude > 30) {
+                    visibilityText = 'Good visibility';
+                } else if (altitude > 15) {
+                    visibilityText = 'Fair visibility';
                 } else if (altitude > 0) {
-                    visibilityText = 'Visible';
+                    visibilityText = 'Low visibility';
                 }
             }
             // Override with API data if available
